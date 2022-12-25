@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get PNR Status</title>
+</head>
+<style>
+  body{
+    background-image: url('ir.jpg');
+    background-size: cover;
+  }
+    input.pnr{
+      padding-left: 20px; 
+      padding-top: 7px;
+      padding-bottom: 7px;
+      padding-right: 20px;
+      top: 400px;
+      left: 600px;
+      font-family:-apple-system, BlinkMacSystemFont;
+      position:absolute;
+      font-size: 15px;
+      font-family:cursive
+    }
+    input.mobilenumber{
+      padding-left: 20px; 
+      padding-top: 7px;
+      padding-bottom: 7px;
+      padding-right: 20px;
+      top: 400px;
+      left: 850px;
+      font-family:-apple-system, BlinkMacSystemFont;
+      position:absolute;
+      font-size: 15px;
+      font-family:cursive
+    }
+    input.submit{
+      padding-left: 20px; 
+      padding-top: 7px;
+      padding-bottom: 7px;
+      padding-right: 20px;
+      top: 520px;
+      left: 775px;
+      font-family:-apple-system, BlinkMacSystemFont;
+      position:absolute;
+      font-size: 15px;
+    }
+    img.img{
+      width: 1680px;
+      height:820px;
+    }
+    h1.heading{
+      font-size: 50px;
+      color:hsl(0, 100%, 50%);
+      position: absolute;
+      top: 5px;
+      left: 400px; 
+      width: 100%;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+    input.email{
+      padding-left: 20px; 
+      padding-top: 7px;
+      padding-bottom: 7px;
+      padding-right: 20px;
+      top: 460px;
+      left: 745px;
+      font-size: 15px;
+      font-family:-apple-system, BlinkMacSystemFont;
+      position:absolute;
+    }
+</style>
+<body>
+<form action="/pnrnumber" method="post">
+  <input type="number" class="pnr" placeholder="User's PNR Number." 
+  cd aria-label="User's PNR Number." name="pnr" aria-describedby="basic-addon2" 
+  value="{{request.form.pnr}}">
+  <input type="number" class="mobilenumber" placeholder="User's Mobile Number." 
+  cd aria-label="User's Mobile Number." aria-describedby="basic-addon2"
+  name="mobilenumber" value="{{request.form.mobilenumber}}">
+  <input type="Submit" class="submit" name="Submit" value="     Search     ">
+  <img src="{{ ui }}" alt="" id="img" class="img" name="img">
+  <h1 class="heading" name="heading">RAILWAY BOOKING SYSTEM</h1>
+  <input type="email" id="email" class="email" name="email" placeholder="Enter User's Email'ID" value="{{request.form.email}}">
+</form>
+</body>
+</html>

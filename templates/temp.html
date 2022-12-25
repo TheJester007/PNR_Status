@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Status</title>
+</head>
+<style>
+    img.img{
+      width: 1680px;
+      height:820px;
+      position:absolute;
+      z-index:0
+    }
+    p.p1{
+        padding-left: 20px; 
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-right: 20px;
+        position: absolute;
+        top: 130px;
+        left: 900px;
+        font-size: 25px;
+        font-family:-apple-system, BlinkMacSystemFont;
+        color:rgb(13, 4, 0);
+        background-color: white;
+    }
+    p.p2{
+        font-family:-apple-system, BlinkMacSystemFont;
+        padding-left: 20px; 
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-right: 20px;
+        left: 900px;
+        position: absolute;
+        top: 160px;
+        font-size: 25px;
+        color:rgb(13, 4, 0);
+        background-color: white;
+    }
+    p.p3{
+        font-family:-apple-system, BlinkMacSystemFont;
+        padding-left: 20px; 
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-right: 20px;
+        position: absolute;
+        top: 190px;
+        left: 900px;
+        font-size: 25px;
+        color:rgb(13, 4, 0);
+        color: black;
+        background-color: white;
+    }
+
+    p.p4{
+        font-family:-apple-system, BlinkMacSystemFont;
+        padding-left: 20px; 
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-right: 20px;
+        position: absolute;
+        font-size: 25px;
+        left: 900px;
+        color:rgb(13, 4, 0);
+        top: 220px;
+        color: black;
+        background-color: white;
+    }
+    p.p5{
+        font-family:-apple-system, BlinkMacSystemFont;
+        padding-left: 20px; 
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-right: 20px;
+        position: absolute;
+        font-size: 25px;
+        left: 900px;
+        color:rgb(13, 4, 0);
+        top: 250px;
+        color: black;
+        background-color: white;
+    }
+    p.p6{
+        font-family:-apple-system, BlinkMacSystemFont;
+        padding-left: 20px; 
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-right: 20px;
+        position: absolute;
+        font-size: 25px;
+        left: 900px;
+        color:rgb(13, 4, 0);
+        top: 280px;
+        color: black;
+        background-color: white;
+        
+    }
+    p.p7{
+        font-family:-apple-system, BlinkMacSystemFont;
+        padding-left: 20px; 
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-right: 20px;
+        position: absolute;
+        font-size: 25px;
+        left: 900px;
+        color:rgb(13, 4, 0);
+        top: 310px;
+        color: black;
+        background-color: white;
+    }
+    p.p8{
+        font-family:-apple-system, BlinkMacSystemFont;
+        padding-left: 20px; 
+        padding-top: 7px;
+        left: 900px;
+        padding-bottom: 7px;
+        padding-right: 20px;
+        position: absolute;
+        font-size: 25px;
+        color:rgb(13, 4, 0);
+        top: 340px;
+        color: black;
+        background-color: white;
+    }
+    p.p9{
+        font-family:-apple-system, BlinkMacSystemFont;
+        padding-left: 20px; 
+        padding-top: 7px;
+        left: 900px;
+        padding-bottom: 7px;
+        padding-right: 20px;
+        position: absolute;
+        font-size: 25px;
+        color:rgb(13, 4, 0);
+        top: 370px;
+        color: black;
+        background-color: white;
+    }
+    p.p10{
+        font-family:-apple-system, BlinkMacSystemFont;
+        padding-left: 20px; 
+        padding-top: 7px;
+        left: 900px;
+        padding-bottom: 7px;
+        padding-right: 20px;
+        position: absolute;
+        font-size: 25px;
+        color:rgb(13, 4, 0);
+        top: 400px;
+        color: black;
+        background-color: white;
+    }
+    input.submit{
+        font-family:-apple-system, BlinkMacSystemFont;
+        padding-left: 20px; 
+        padding-top: 7px;
+        left: 1080px;
+        padding-bottom: 7px;
+        padding-right: 20px;
+        position: absolute;
+        font-size: 25px;
+        color:rgb(13, 4, 0);
+        top: 500px;
+        color: black;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+
+</style>
+<body>
+    <form action="/sendmsg">
+    <img src="{{ ui }}" alt="" id="img" class="img" name="img">
+    <h2>
+    Ticket Confirmation
+    </h2>
+    <p class="p1" name="p1">
+        PNR - {{pnrnumber}}
+    </p>
+    <p class="p2" name="p2">
+        Train Number - {{response_json.data.trainInfo.trainNo}} 
+    </p>
+    <p class="p3" name="p3">
+        Train Name - {{response_json.data.trainInfo.name}} 
+    </p>
+    <p class="p4" name="p4">
+        From : {{response_json.data.boardingInfo.stationName}}
+    </p>
+    <p class="p5" name="p5">
+        To :  {{response_json.data.destinationInfo.stationName}}
+    </p>
+    <p class="p6" name="p6">
+        Arrival & Departure Time - {{response_json.data.boardingInfo.arrivalTime}} : {{response_json.data.boardingInfo.departureTime}} 
+    </p>
+    <p class="p7" name="p7"> Destination Arrival Time - {{response_json.data.destinationInfo.arrivalTime}} </p>
+    <p>
+        Platform Number - {{response_json.data.boardingInfo.platform}}
+    </p>
+    <p class="p8" name="p8">
+        Number of Seats - {{response_json.data.seatInfo.noOfSeats}} 
+    </p>
+    <p class="p9" name="p9" >
+        Seating Information - {{response_json.data.seatInfo.coach}}  {{response_json.data.seatInfo.berth}}
+    </p>
+    <p class="p10" name="p10">
+        Mobile Number - {{mn}}
+    </p>
+    </form>
+</body> 
+</html>
